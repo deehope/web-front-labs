@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(252, 224, 244);
+    color: rgb(53, 48, 48);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+footer {
+    background-color: rgb(222, 128, 246);
+    color:indigo;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    padding: 10px;
+    margin: 0px;
+    text-align: right;
+    font-style: italic;
+}
+header {
+    background-color: rgb(222, 128, 246);
+    color:indigo;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    margin: 0px;   
+}
