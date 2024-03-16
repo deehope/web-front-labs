@@ -1,11 +1,11 @@
 body {
-    background-color: rgb(252, 224, 244);
+    background-color: rgb(238, 224, 252);
     color: rgb(53, 48, 48);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
 }
 footer {
-    background-color: rgb(222, 128, 246);
+    background-color: rgb(238, 180, 245);
     color:indigo;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 12px;
@@ -15,7 +15,7 @@ footer {
     font-style: italic;
 }
 header {
-    background-color: rgb(222, 128, 246);
+    background-color: rgb(238, 180, 245);
     color:indigo;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
