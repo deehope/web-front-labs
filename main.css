@@ -22,6 +22,11 @@ header {
     padding: 10px;
     margin: 0px;   
 }
+a {
+    color:black;
+    text-decoration: none;
+    transition: 1s 2s;
+}
 a:link{
     color: rgb(85, 36, 106);
 }
@@ -31,6 +36,7 @@ a:visited{
 a:hover {
     color: rgb(126, 38, 38);
     text-decoration: underline;
+    transition: 0,3s;
     font-weight: bold;
 }
 a:active {
