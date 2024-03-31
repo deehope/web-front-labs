@@ -13,6 +13,10 @@ footer {
     margin: 0px;
     text-align: right;
     font-style: italic;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 header {
     background-color: rgb(238, 180, 245);
@@ -21,6 +25,9 @@ header {
     font-size: 14px;
     padding: 10px;
     margin: 0px;   
+}
+main {
+    margin: 10px 20px 34px;
 }
 a {
     color:black;
