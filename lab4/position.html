@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Соколова Дарья. Позиционирование</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png" type="image/png" >
+    <link rel="icon" href="../favicon-16x16.png" type="image/png">
+    <style>
+        div {
+            width: 300px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background-color:rgb(248, 233, 255);
+            border: 1px dotted rgb(242, 167, 230);
+            margin: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        .position-relative {
+            left: 140px;
+            top: -130px;
+            z-index: 0;
+        }
+        .position-relative:hover {
+            z-index: 2;
+        }
+        .position-absolute {
+            position: absolute;
+            left: 300px;
+        }
+        .position-absolute:hover {
+            transform: scale(1.5); 
+            background-color: rgb(175, 175, 246);
+            box-shadow: 5px 10px 15px #b0c1f5d8; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+    
+    <main>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-relative">relative</div>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-absolute">absolute</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+    </main>
+
+    <footer>
+        &copy; Соколова Дарья, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
