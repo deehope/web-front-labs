@@ -43,3 +43,13 @@ a:active {
     color: black;
     opacity: 0,3;
 }
+div.menu {
+    border: 5px solid #ab8de9;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+div.menu:hover {
+    background-color: #e8cefb;
+    box-shadow: 5px 10px 15px #a854e8;
+}
