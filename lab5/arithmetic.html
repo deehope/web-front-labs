@@ -25,6 +25,33 @@
         function hello() {
             alert('Приветствую вас на моей странице!\nЖелаю хорошего дня:)')
         }
+        function raznost() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert('Разность ' + a + ' и ' + b + ' равна ' + result);
+        }
+        function del() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a / b;
+            alert('Деление ' + a + ' на ' + b + ' равно ' + result);  
+        }
+        function proiz() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a * b;
+            alert('Произведение ' + a + ' на ' + b + ' равно ' + result); 
+        }
     </script>
     <style>
         header {
@@ -59,6 +86,9 @@
         <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
         <div class="message" onclick="showsum()">Найти сумму чисел</div>
         <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+        <div class="message" onclick="raznost()">Найти разность чисел</div>
+        <div class="message" onclick="proiz()">Найти произведение</div>
+        <div class="message" onclick="del()">Найти деление</div>
     </main>
 
     <footer ondblclick="hello()">
