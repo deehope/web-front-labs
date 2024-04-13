@@ -15,8 +15,21 @@
             let result = a + b;
             alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
         }
+        function showAuthor() {
+            let author = 'Автор страницы:\nСоколова Дарья Антоновна'
+            alert(author)
+        }
+        function hello() {
+            alert('Приветствую вас на моей странице!\nЖелаю хорошего дня:)')
+        }
     </script>
     <style>
+        header {
+            cursor: pointer;
+        }
+        footer {
+            cursor: pointer;
+        }
         .message {
             cursor: pointer;
             display: inline-block;
@@ -34,16 +47,16 @@
 </head>
 
 <body>
-    <header>
+    <header onclick="showAuthor()">
         НГТУ, ФБ, Лабораторная работа 5
     </header>
     
     <main>
         <div class="message" onclick="showsum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать, кто автор страницы</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
     </main>
 
-    <footer>
+    <footer ondblclick="hello()">
         &copy; Соколова Дарья, ФБИ-23, 2 курс, 2024
     </footer>
 </body>
