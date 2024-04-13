@@ -52,6 +52,13 @@
             let result = a * b;
             alert('Произведение ' + a + ' на ' + b + ' равно ' + result); 
         }
+        function changeOutput(buttonNum, backColor, textColor, block) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка ' + buttonNum
+            output.style.backgroundColor = backColor
+            output.style.color = textColor
+            output.style.border = block
+        }
     </script>
     <style>
         header {
@@ -73,6 +80,11 @@
             background-color: #f2ddf8;
             padding: 10px;
         }
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
     </style>
 </head>
 
@@ -89,6 +101,15 @@
         <div class="message" onclick="raznost()">Найти разность чисел</div>
         <div class="message" onclick="proiz()">Найти произведение</div>
         <div class="message" onclick="del()">Найти деление</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, '#f8fcc7','darkgreen', '5px solid #12fc70')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, '#d8fcc7', 'darkred', '2px solid #1245fc')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, '#e3cafc', 'darkblue', '1px solid #fcba12')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, '#cae7fc', 'black', '3px solid #fc123d')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
     <footer ondblclick="hello()">
