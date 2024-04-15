@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Соколова Дарья. Корзина</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png" type="image/png" >
+    <link rel="icon" href="../favicon-16x16.png" type="image/png">
+    <script>
+        function showSum() {
+            let output = document.getElementById('output');
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+            let inputC = document.getElementById('numberC')
+            let inputD = document.getElementById('numberD')
+            let inputE = document.getElementById('numberE')
+
+            let a1 = parseInt(inputA.value);
+            let a2 = 100
+            let a = a1 * a2
+
+            let b1 = parseInt(inputB.value);
+            let b2 = 80
+            let b = b1 * b2
+
+            let c1 = parseInt(inputC.value);
+            let c2 = 150
+            let c = c1 * c2
+            
+            let d1 = parseInt(inputD.value);
+            let d2 = 300
+            let d = d1 * d2
+
+            let e1 = parseInt(inputE.value);
+            let e2 = 400
+            let e = e1 * e2
+
+            let result = a + b + c + d + e;
+            output.innerHTML = 'Общая сумма к оплате: ' + result + ' рублей'
+        }
+        function clearF() { 
+            document.getElementById('numberA').value = ''; 
+            document.getElementById('numberB').value = ''; 
+            document.getElementById('numberC').value = ''; 
+            document.getElementById('numberD').value = ''; 
+            document.getElementById('numberE').value = ''; 
+            document.getElementById('output').innerHTML = '';
+        }
+    </script>
+    <style>
+        .cart {
+            cursor: pointer;
+            display: inline-block;
+            width: 300px;
+            height: inherit;
+            color: rgb(12, 2, 19);
+            border: 3px solid #b38ffb;
+            border-radius: 15px;
+            margin: 50px 550px;
+            background-color: #f2ddf8;
+            padding: 10px;
+
+        }
+        h1 {
+            
+            text-align: center;
+        }
+        #output {
+            border: #f2ddf8;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+    
+    <main>
+        <div class="cart">
+            <h1>Корзина товаров</h1>
+            <label>Яблоки(100р/шт):<br/><input type="number" id="numberA" placeholder="Введите количество яблок" min="0" style="margin-bottom: 10px; width: 200px;"></label><br>
+            <label>Груши(80р/шт):<br/><input type="number" id="numberB" placeholder="Введите количество груш" min="0" style="margin-bottom: 10px; width: 200px;"></label><br>
+            <label>Апельсины(150р/шт):<br/><input type="number" id="numberC" placeholder="Введите количество апельсинов" min="0" style="margin-bottom: 10px; width: 200px;"></label><br>
+            <label>Дыни(300р/шт):<br/><input type="number" id="numberD" placeholder="Введите количество дынь" min="0" style="margin-bottom: 10px; width: 200px;"></label><br>
+            <label>Арбузы(400р/шт):<br/><input type="number" id="numberE" placeholder="Введите количество арбузов" min="0" style="margin-bottom: 10px; width: 200px;"></label><br>
+            <input type="button" value="Рассчитать" style="margin-bottom: 10px;" onclick="showSum()">
+            <input type="button" value="Очистить" style="margin-bottom: 10px;" onclick="clearF()">
+            <div id="output"></div>
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; Соколова Дарья, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
