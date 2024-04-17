@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Соколова Дарья. Круги</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png" type="image/png" >
+    <link rel="icon" href="../favicon-16x16.png" type="image/png">
+    <script>
+        function hide(div){
+            div.style.opacity = '0';
+            div.style.width = '0';
+            div.style.height = '0'
+        }
+        function showCircles() {
+            const circle = document.querySelectorAll('div');
+            circle.forEach(div => {
+                div.style.opacity = '';
+                div.style.width = '';
+                div.style.height = '';
+            })
+        }
+    </script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            transition: all 0.5s ease;
+            position: absolute;
+            line-height: 100px;
+            opacity: 1; 
+        }
+        .one {
+            border-radius: 50%;
+            background-color: rgb(124, 238, 175);
+            opacity: 1;
+            bottom: 120px;
+            right: 100px;
+        }
+        .two {
+            border-radius: 50%;
+            background-color: rgb(238, 228, 124);
+            opacity: 1; 
+            left: 70px;
+            top: 100px;
+        }
+        .three {
+            border-radius: 50%;
+            background-color: rgb(228, 73, 243);
+            opacity: 1; 
+            left: 117px;
+            top: 490px;
+        }
+        .four {
+            border-radius: 50%;
+            background-color: rgb(143, 254, 228);
+            opacity: 1; 
+            left: 1070px;
+            top: 130px;
+        }
+        .five {
+            border-radius: 50%;
+            background-color: rgb(238, 177, 164);
+            opacity: 1; 
+            right: 500px;
+        }
+        .six {
+            border-radius: 50%;
+            background-color: rgb(186, 156, 232);
+            opacity: 1; 
+            right: 400px; 
+            bottom: 200px;
+        }
+        .seven {
+            border-radius: 50%;
+            background-color: rgb(156, 156, 232);
+            opacity: 1; 
+            right: 350px; 
+            bottom: 500px;
+        }
+        .eight {
+            border-radius: 50%;
+            background-color: rgb(199, 232, 156);
+            opacity: 1; 
+            right: 100px; 
+            bottom: 400px;
+        }
+        .nine {
+            border-radius: 50%;
+            background-color: rgb(232, 156, 156);
+            opacity: 1; 
+            left: 100px; 
+            bottom: 500px;
+        }
+        .ten {
+            border-radius: 50%;
+            background-color: rgb(169, 232, 156);
+            opacity: 1; 
+            left: 300px; 
+            bottom: 500px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <button onclick="showCircles()">Вернуть круги</button>
+        <div class="one" onclick="hide(this)">1</div>
+        <div class="two" onclick="hide(this)">2</div>
+        <div class="three" onclick="hide(this)">3</div>
+        <div class="four" onclick="hide(this)">4</div>
+        <div class="five" onclick="hide(this)">5</div>
+        <div class="six" onclick="hide(this)">6</div>
+        <div class="seven" onclick="hide(this)">7</div>
+        <div class="eight" onclick="hide(this)">8</div>
+        <div class="nine" onclick="hide(this)">9</div>
+        <div class="ten" onclick="hide(this)">10</div>
+
+    </main>
+    
+    <footer>
+        &copy; Соколова Дарья, ФБИ-23, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
