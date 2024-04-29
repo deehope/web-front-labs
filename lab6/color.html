@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Соколова Дарья. Перебор цветов</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png" type="image/png" >
+    <link rel="icon" href="../favicon-16x16.png" type="image/png">
+    <script>
+        function changeColor(div) {
+            if (div.style.backgroundColor == 'yellow') {
+                div.style.backgroundColor = 'red';
+                div.style.color = 'white';
+                document.getElementById('color-name').innerHTML = 'красный';
+            }
+            else if (div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'black';
+                div.style.color = 'yellow';
+                document.getElementById('color-name').innerHTML = 'черный';
+            }
+            else if (div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'green';
+                div.style.color = 'pink';
+                document.getElementById('color-name').innerHTML = 'зеленый';
+            }
+            else if (div.style.backgroundColor == 'green') {
+                div.style.backgroundColor = 'pink';
+                div.style.color = 'purple';
+                document.getElementById('color-name').innerHTML = 'розовый';
+            }
+            else if (div.style.backgroundColor == 'pink') {
+                div.style.backgroundColor = 'blue';
+                div.style.color = 'white';
+                document.getElementById('color-name').innerHTML = 'голубой';
+            }
+            else {
+                div.style.backgroundColor = 'yellow';
+                div.style.color = 'black';
+                document.getElementById('color-name').innerHTML = 'желтый';
+            }
+        }
+    </script>
+    <style>
+        .color {
+            border: 3px solid #0a0a0a;
+            border-radius: 3px;
+            background-color: yellow;
+            margin: 45px auto;
+            text-align: center;
+            width: 350px;
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.5s, color 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+    
+    <main>
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">желтый</span><br>
+            Сделайте двойной щелчок, чтобы сменить.
+        </div>
+    </main>
+
+    <footer>
+        &copy; Соколова Дарья, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
