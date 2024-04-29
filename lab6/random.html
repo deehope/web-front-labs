@@ -52,7 +52,16 @@
             number = Math.floor(Math.random()*100) + 1;
             document.getElementById('user-number').value = '';
             document.getElementById('result').innerHTML = ''; 
-            
+        }
+        function rulesShow() {
+            let screens = document.getElementsByClassName('rules');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+        function rulesClose() {
+            let screens = document.getElementsByClassName('rules');
+            screens[1].style.display = 'none';
+            screens[0].style.display = 'block';
         }
     </script>
     <style>
@@ -63,6 +72,14 @@
             text-align: center;
             width: 350px;
             padding: 20px;
+        }
+        .rules {
+            border: 3px solid #e4abf2;
+            background-color: #dbcdf8;
+            border-radius: 15px;
+            margin: 0px;
+            width: 550px;
+            padding: 10px;
         }
     </style>
 </head>
@@ -96,6 +113,22 @@
             </div>
             <div>
                 <button onclick="again()">Сыграть еще раз</button>
+            </div>
+        </div>
+        <div class="rules">
+            <button onclick="rulesShow()">Показать правила игры</button>
+        </div>
+        
+        <div class="rules" style="display: none;">
+            <button onclick="rulesClose()">Скрыть правила игры</button>
+            <div>
+                <ol type="I">
+                    <li>Нажмите кнопку сыграть в игры</li>
+                    <li>Угадайте число</li>
+                    <li>Число должно быть от 1 до 100</li>
+                    <li>Угадывайте число пока не появится "Позравляем, вы выиграли!"</li>
+                    <li>Если хотите сыграть еще раз, нужно нажать на "Сыграть еще раз"</li>
+                </ol>
             </div>
         </div>
     </main>
