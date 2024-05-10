@@ -14,12 +14,43 @@
             newBlock.style.background = '#FFC2F9';
             newBlock.style.height = '40px';
             newBlock.style.margin = '20px';
-            newBlock.style.border = '3px solid #A795A5'
+            newBlock.style.border = '3px solid #A795A5';
             document.querySelector('main').appendChild(newBlock);
+        }
+        function addNewBlocks() {
+            let blocksContainer = document.getElementById('blocksContainer');
+            blocksContainer.innerHTML = ''; 
+
+            let blockCount = document.getElementById('blockCount').value;
+            let initialWidth = 150;
+            let widthStep = 10;
+
+            if (!blockCount) {
+                console.error("Не указано количество блоков!");
+                return;
+            }
+
+            for (let i = 0; i < blockCount; i++) {
+                let newBlock = document.createElement('div');
+                let currentWidth = initialWidth + widthStep * i;
+
+                newBlock.style.backgroundColor = '#FFC2F9';
+                newBlock.style.height = '40px';
+                newBlock.style.margin = '20px';
+                newBlock.style.border = '3px solid #A795A5';
+                newBlock.style.width = `${currentWidth}px`;
+
+                newBlock.innerHTML = `Блок № ${i + 1}: 2*${i}<sup>2</sup> = ${2 * i**2}`;
+                blocksContainer.appendChild(newBlock);
+            }
         }
     </script>
     <style>
-
+        .blockInput {
+            width: 200px; 
+            padding: 8px; 
+            margin: 10px 0;  
+        }
     </style>
 </head>
 <body>
@@ -28,7 +59,12 @@
     </header>
     
     <main>
-        <button onclick="addNewBlock()">Добавить блок</button>
+        <div class="input">
+            <input type="number" id="blockCount" placeholder="Введите количество блоков" class="blockInput">
+            <button onclick="addNewBlock()">Добавить блок</button>
+            <button onclick="addNewBlocks()">Добавить блоки</button>
+        </div>
+        <div id="blocksContainer"></div> 
     </main>
 
     <footer>
