@@ -59,6 +59,27 @@
                 main.appendChild(newBlock)
             }
         }
+        function addCircles() {
+            let container = document.getElementById('blocksContainer');
+            container.innerHTML = '';
+
+            for (let i = 10; i >= -80; i -= 3) {
+                let circle = document.createElement('div');
+                circle.style.backgroundColor = "#AD9DFB";
+                circle.style.width = '20px';
+                circle.style.height = '20px';
+                circle.style.margin = '5px';
+                circle.style.border = '1px solid #000';
+                circle.style.borderRadius = '50%'; 
+                circle.style.display = 'inline-block'; // Размещаем круги в строку
+                circle.style.textAlign = 'center';
+                circle.style.lineHeight = '20px'; // Выравниваем текст по вертикали
+                circle.style.fontSize ='10px';
+
+                circle.innerHTML = i;
+                container.appendChild(circle);
+            }
+        }
     </script>
     <style>
         .blockInput {
@@ -79,6 +100,7 @@
             <button onclick="addNewBlock()">Добавить блок</button>
             <button onclick="addNewBlocks()">Добавить блоки</button>
             <button onclick="add20_50()">20 => 50</button>
+            <button onclick="addCircles()">10 => -80</button>
         </div>
         <div id="blocksContainer"></div> 
     </main>
