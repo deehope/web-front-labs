@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Соколова Дарья Антоновна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png" type="image/png" >
+    <link rel="icon" href="../favicon-16x16.png" type="image/png">
+    <script>
+        function addNewBlock () {
+            let newBlock = document.createElement('div');
+            newBlock.style.background = '#FFC2F9';
+            newBlock.style.height = '40px';
+            newBlock.style.margin = '20px';
+            newBlock.style.border = '3px solid #A795A5'
+            document.querySelector('main').appendChild(newBlock);
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    
+    <main>
+        <button onclick="addNewBlock()">Добавить блок</button>
+    </main>
+
+    <footer>
+        &copy; Соколова Дарья, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
