@@ -89,7 +89,7 @@
                 let opacityLevel = (i + 1) * 0.1; // Увеличение opacity: от 0.1 до 1.0
                 if (opacityLevel > 1) opacityLevel = 1; // Ограничить максимальное значение до 1
 
-                block.style.backgroundColor = '#FF6347'; // Используйте любой желаемый цвет фона
+                block.style.backgroundColor = '#FF6347'; 
                 block.style.width = '100px';
                 block.style.height = '50px';
                 block.style.margin = '10px';
@@ -101,12 +101,47 @@
                 container.appendChild(block);
             }
         }
+        function createColorCircles() {
+            let container = document.getElementById('circlesContainer');
+            container.innerHTML = ''; 
+
+            let count = document.getElementById('circleCount').value;
+            for (let i = count; i > 0; i--) {
+                let circle = document.createElement('div');
+                circle.className = 'circle';
+                circle.textContent = i;
+
+                if (i % 2 !== 0) {
+                    circle.style.backgroundColor = '#FBBB9D';
+                } else {
+                    circle.style.backgroundColor = '#9DFBD0';
+                }
+
+                container.appendChild(circle);
+            }
+        }
     </script>
     <style>
         .blockInput {
             width: 200px; 
             padding: 8px; 
             margin: 10px 0;  
+        }
+        #circlesContainer {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-top: 20px;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: rgb(11, 10, 10); 
         }
     </style>
 </head>
@@ -125,6 +160,11 @@
             <button onclick="addOpacityBlocks()">Добавить блоки с Opacity</button>
         </div>
         <div id="blocksContainer"></div> 
+        <div>
+            <input type="number" class="blockInput" id="circleCount" placeholder="Введите количество кругов">
+            <button onclick="createColorCircles()">Цветные круги</button>
+        </div>
+        <div id="circlesContainer"></div>
     </main>
 
     <footer>
