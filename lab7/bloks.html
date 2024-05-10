@@ -80,6 +80,27 @@
                 container.appendChild(circle);
             }
         }
+        function addOpacityBlocks() {
+            let container = document.getElementById('blocksContainer');
+            container.innerHTML = ''; // Очистить контейнер перед добавлением новых элементов
+
+            for (let i = 0; i < 10; i++) {
+                let block = document.createElement('div');
+                let opacityLevel = (i + 1) * 0.1; // Увеличение opacity: от 0.1 до 1.0
+                if (opacityLevel > 1) opacityLevel = 1; // Ограничить максимальное значение до 1
+
+                block.style.backgroundColor = '#FF6347'; // Используйте любой желаемый цвет фона
+                block.style.width = '100px';
+                block.style.height = '50px';
+                block.style.margin = '10px';
+                block.style.border = '2px solid #000';
+                block.style.display = 'inline-block';
+                block.style.opacity = opacityLevel;
+
+                block.innerHTML = `Блок № ${i + 1}`;
+                container.appendChild(block);
+            }
+        }
     </script>
     <style>
         .blockInput {
@@ -101,6 +122,7 @@
             <button onclick="addNewBlocks()">Добавить блоки</button>
             <button onclick="add20_50()">20 => 50</button>
             <button onclick="addCircles()">10 => -80</button>
+            <button onclick="addOpacityBlocks()">Добавить блоки с Opacity</button>
         </div>
         <div id="blocksContainer"></div> 
     </main>
