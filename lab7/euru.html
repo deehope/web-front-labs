@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Соколова Дарья Антоновна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png" type="image/png">
+    <link rel="icon" href="../favicon-16x16.png" type="image/png">
+    <script>
+    function getEuroExchangeRate() {
+        const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const euro = data.Valute.EUR;
+                const currentRate = euro.Value;
+                const previousRate = euro.Previous;
+                const change = currentRate - previousRate;
+                const changeText = change > 0 ? `поднялся на ${change.toFixed(4)}` : `опустился на ${(-change).toFixed(4)}`;
+
+                const info = document.getElementById('exchangeRateInfo');
+                info.innerHTML = `
+                    <h2>Курс евро на сегодня</h2>
+                    <p>Текущий курс евро: <strong>${currentRate.toFixed(2)} RUB</strong></p>
+                    <p>Курс за предыдущую дату: ${previousRate.toFixed(2)} RUB</p>
+                    <p>Курс евро ${change >= 0 ? 'поднялся' : 'опустился'}: ${Math.abs(change).toFixed(4)} RUB (${changeText})</p>
+                    <p>Дата запроса: ${data.Date}</p>
+                    <a href="https://www.cbr-xml-daily.ru/">Источник данных</a>
+                `;
+            });
+        }   
+    </script>
+    <style>
+        #exchangeRateInfo {
+            margin-top: 20px;
+            border: 1px solid #6e6d6d;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    
+    <main>
+        <button onclick="getEuroExchangeRate()">Получить курс евро</button>
+        <div id="exchangeRateInfo"></div>
+    </main>
+
+    <footer>
+        &copy; Соколова Дарья, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
