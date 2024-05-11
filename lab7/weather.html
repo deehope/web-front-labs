@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Соколова Дарья Антоновна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png" type="image/png" >
+    <link rel="icon" href="../favicon-16x16.png" type="image/png">
+    <script>
+        function getWeatherForecast() {
+            const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const temperatures = data.hourly.temperature_2m;
+                    const times = data.hourly.time;
+
+                    const weatherInfo = document.getElementById('weatherInfo');
+                    const today = new Date().toISOString().split('T')[0]; // Получаем сегодняшнюю дату в формате YYYY-MM-DD
+
+                    let tempAt8 = '', tempAt12 = '', tempAt20 = '';
+                    
+                    times.forEach((time, index) => {
+                        const date = time.split('T')[0];
+                        const hour = time.split('T')[1].split(':')[0];
+                        if (date === today) {
+                            if (hour === '08') {
+                                tempAt8 = temperatures[index];
+                            } else if (hour === '12') {
+                                tempAt12 = temperatures[index];
+                            } else if (hour === '20') {
+                                tempAt20 = temperatures[index];
+                            }
+                        }
+                    });
+
+                    weatherInfo.innerHTML = `
+                        <h2>Температура в Новосибирске сегодня</h2>
+                        <p>Утро (08:00): ${tempAt8} °C</p>
+                        <p>День (12:00): ${tempAt12} °C</p>
+                        <p>Вечер (20:00): ${tempAt20} °C</p>
+                    `;
+                })
+                .catch(error => {
+                    console.error('Ошибка при получении данных о погоде:', error);
+                    document.getElementById('weatherInfo').innerText = 'Ошибка при получении данных.';
+                });
+        }
+    </script>
+    <style>
+        #weatherInfo {
+            margin-top: 20px;
+            border: 2px solid #74547b;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    
+    <main>
+        <button onclick="getWeatherForecast()">Показать погоду</button>
+        <div id="weatherInfo"></div>
+    </main>
+
+    <footer>
+        &copy; Соколова Дарья, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
