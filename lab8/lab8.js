@@ -20,6 +20,23 @@ function showDate() {
         localeDate.innerHTML = `${name}: ${new Intl.DateTimeFormat(locale, options).format(today)}`;
         localDates.appendChild(localeDate);
     });
+     // Вывод текущего года
+     let year = document.getElementById('year');
+     year.innerHTML = `Текущий год: ${today.getFullYear()}`;
+ 
+     // Вывод текущего месяца
+     let monthNames = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
+     let month = document.getElementById('month');
+     month.innerHTML = `Текущий месяц: ${monthNames[today.getMonth()]}`;
+ 
+     // Вывод текущей даты
+     let date = document.getElementById('date');
+     date.innerHTML = `Текущая дата: ${today.getDate()}`;
+ 
+     // Вывод дня недели
+     let dayNames = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+     let day = document.getElementById('day');
+     day.innerHTML = `День недели: ${dayNames[today.getDay()]}`;
 }
 
 document.addEventListener('DOMContentLoaded', showDate);
