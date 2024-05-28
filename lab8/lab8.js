@@ -38,7 +38,20 @@ function showDate() {
      let day = document.getElementById('day');
      day.innerHTML = `День недели: ${dayNames[today.getDay()]}`;
 }
+function calculateDayOfWeek() {
+    let day = document.getElementById('input-day').value;
+    let month = document.getElementById('input-month').value - 1; // Месяцы в JavaScript начинаются с 0
+    let year = document.getElementById('input-year').value;
 
+    if (day && month >= 0 && year) {
+        let date = new Date(year, month, day);
+        let dayNames = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+        let result = document.getElementById('result-day-of-week');
+        result.innerHTML = `День недели: ${dayNames[date.getDay()]}`;
+    } else {
+        alert('Пожалуйста, введите корректную дату.');
+    }
+}
 document.addEventListener('DOMContentLoaded', showDate);
 
 
