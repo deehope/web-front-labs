@@ -10,11 +10,39 @@
     <link rel="icon" href="../favicon-16x16.png" type="image/png">
     <script src="time.js" defer></script>
     <style>
-         #seconds {
-            font-size: 48px;
+         #time1 {
+            width: 5px;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
             text-align: center;
-            margin-top: 20px;
+            background-color: rgb(76, 0, 255);
+            position: relative;
+            transform-origin: bottom center;
+            transition: transform 1s linear;
+
         }
+        .clock-container {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                margin: 40px auto;
+                background-color: #846262;
+                border-radius: 50%;
+                box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+            }
+
+            .clock-face {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 240px;
+                height: 240px;
+                border-radius: 50%;
+                background-color: #f8f0fb;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
     </style>
 </head>
 <body onload="showTime()">
@@ -24,7 +52,14 @@
     </header>
 
     <main>
-        <div id="seconds"></div>
+        <div id="seconds" style="font-size: 100px; text-align: center; margin-top: 50px;"></div>
+        <div class="clock-container">
+            <div class="clock-face">
+                <div style="margin-left: 110px;">12</div>
+                <div id="time1" style="margin-top: 5px;"></div>
+                <div style="margin-left: 110px; margin-top: 100px;">9</div>
+            </div>
+        </div>
     </main>
 
     <footer>
